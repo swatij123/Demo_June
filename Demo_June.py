@@ -9,17 +9,17 @@ class FrontEnd:
         self.frame_header = ttk.Frame(self.master)
         self.frame_header.pack()
       
-      #Header
+      #******Header******
         ttk.Label(self.frame_header, text='Welcome to the Image Editor App!').grid(
             row=0, column=1, columnspan=1)
         ttk.Label(self.frame_header, text='Upload, edit and save your images Easily!').grid(
             row=1, column=1, columnspan=1)
-        self.logo = PhotoImage(file="python_logo.gif").subsample(3, 3)
+        self.logo = PhotoImage(file="zcon.png").subsample(3, 3)
         print(self.logo)
         ttk.Label(self.frame_header, image=self.logo).grid(
             row=0, column=0, rowspan=2)
         
-        #Main Menu
+        #*****Main Menu*****
         self.frame_menu = ttk.Frame(self.master)
         self.frame_menu.pack()
         self.frame_menu.config(relief=RIDGE, padding=(50, 15))
@@ -58,7 +58,7 @@ class FrontEnd:
         self.canvas = Canvas(self.frame_menu, bg="gray", width=300, height=400)
         self.canvas.grid(row=0, column=1, rowspan=10)
 
-#Footer
+#*****Footer*****
         self.apply_and_cancel = ttk.Frame(self.master)
         self.apply_and_cancel.pack()       
         self.apply = ttk.Button(
@@ -74,7 +74,7 @@ class FrontEnd:
             self.apply_and_cancel, text="Revert All Changes", command=self.revert_action).grid(row=0, column=2, 
                                 padx=5, pady=5, sticky='sw')
 
-    #Functions    
+    #*****Functions*****
     def upload_action(self):
             pass
     
@@ -113,6 +113,8 @@ class FrontEnd:
     
     def revert_action(self):
            pass
+    
+
 root = Tk()
 app = FrontEnd(root)
 root.mainloop()
